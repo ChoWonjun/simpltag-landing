@@ -23,13 +23,15 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-16 md:h-20 items-center justify-center md:justify-start">
-          <Image
-            src="/logo.svg"
-            alt="SimplTag"
-            width={137}
-            height={29}
-            priority
-          />
+          <a href="/" className="transition-opacity hover:opacity-80">
+            <Image
+              src="/logo.svg"
+              alt="SimplTag"
+              width={137}
+              height={29}
+              priority
+            />
+          </a>
         </div>
       </div>
     </header>

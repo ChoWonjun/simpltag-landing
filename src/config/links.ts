@@ -6,8 +6,8 @@ export const DOWNLOAD_LINKS: DownloadLinks = {
 };
 
 export const LEGAL_LINKS: LegalLinks = {
-  terms: 'https://agent.simpltag.com/terms',
-  privacy: 'https://agent.simpltag.com/privacy',
+  terms: '/terms',
+  privacy: '/terms?tab=privacy-ko',
 };
 
 export const CONTACT: Contact = {

@@ -17,8 +17,6 @@ export function Footer() {
           <span className="hidden md:inline">·</span>
           <a
             href={LEGAL_LINKS.terms}
-            target="_blank"
-            rel="noopener noreferrer"
             className="hover:text-foreground hover:underline transition-colors"
           >
             이용약관
@@ -26,8 +24,6 @@ export function Footer() {
           <span className="hidden md:inline">·</span>
           <a
             href={LEGAL_LINKS.privacy}
-            target="_blank"
-            rel="noopener noreferrer"
             className="hover:text-foreground hover:underline transition-colors"
           >
             개인정보처리방침
