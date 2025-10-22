@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { ScreenshotCard } from "@/components/ScreenshotCard";
 import {
   Carousel,
@@ -47,6 +48,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-title-l font-bold mb-4">
