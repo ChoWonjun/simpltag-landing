@@ -23,7 +23,7 @@ export function ScreenshotCard({ image, alt, title, description }: ScreenshotCar
         </div>
       </CardContent>
       {(title || description) && (
-        <CardHeader className="!px-8">
+        <CardHeader className="!px-8 text-center">
           {title && (
             <CardTitle className="text-base font-semibold">
               {title}
