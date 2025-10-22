@@ -13,7 +13,7 @@ import {
 import { supabase } from "@/lib/supabase";
 import ReactMarkdown from "react-markdown";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 interface LegalDocument {
   doc_type: string;
@@ -22,7 +22,7 @@ interface LegalDocument {
   body_md: string;
 }
 
-export default function TermsPage() {
+function TermsContent() {
   const searchParams = useSearchParams();
   const defaultTab = searchParams.get('tab') || 'terms-ko';
   const [documents, setDocuments] = useState<LegalDocument[]>([]);
@@ -122,5 +122,13 @@ export default function TermsPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function TermsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TermsContent />
+    </Suspense>
   );
 }

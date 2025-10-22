@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Header() {
@@ -23,7 +24,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-16 md:h-20 items-center justify-center md:justify-start">
-          <a href="/" className="transition-opacity hover:opacity-80">
+          <Link href="/" className="transition-opacity hover:opacity-80">
             <Image
               src="/logo.svg"
               alt="SimplTag"
@@ -31,7 +32,7 @@ export function Header() {
               height={29}
               priority
             />
-          </a>
+          </Link>
         </div>
       </div>
     </header>
