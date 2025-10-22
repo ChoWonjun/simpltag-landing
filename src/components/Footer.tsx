@@ -3,14 +3,14 @@ import { SITE_INFO } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-50 dark:bg-neutral-900 py-8 px-4">
+    <footer className="bg-muted py-8 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-center gap-2 md:gap-1 text-sm text-neutral-500">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-center gap-2 md:gap-1 text-sm text-muted-foreground">
           <span>{SITE_INFO.copyright}</span>
           <span className="hidden md:inline">·</span>
           <a
             href={`mailto:${CONTACT.email}`}
-            className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:underline transition-colors"
+            className="hover:text-foreground hover:underline transition-colors"
           >
             문의하기
           </a>
@@ -19,7 +19,7 @@ export function Footer() {
             href={LEGAL_LINKS.terms}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:underline transition-colors"
+            className="hover:text-foreground hover:underline transition-colors"
           >
             이용약관
           </a>
@@ -28,7 +28,7 @@ export function Footer() {
             href={LEGAL_LINKS.privacy}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:underline transition-colors"
+            className="hover:text-foreground hover:underline transition-colors"
           >
             개인정보처리방침
           </a>
