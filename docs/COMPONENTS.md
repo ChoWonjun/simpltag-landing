@@ -24,6 +24,114 @@ src/
 
 ---
 
+## shadcn/ui Implementation Rules (필수 준수 사항)
+
+### 🚨 절대 규칙
+
+#### 1. 컴포넌트 사용 전 기본 클래스 파악 필수
+```bash
+# shadcn/ui 컴포넌트 사용 전 반드시 소스 확인
+cat src/components/ui/[component].tsx
+```
+
+**이유**: 기본 클래스(px-6, py-6 등)를 모르면 중첩 패딩 문제 발생
+
+#### 2. 패딩 중첩 계산 필수
+```
+최종 패딩 = 부모 패딩 + 자식 패딩 + 손자 패딩
+```
+
+**예시**:
+```
+Card (py-6: 24px)
+├─ CardContent (px-6: 24px)
+│   └─ div
+│       └─ Image → 실제 좌우 여백 = 24px
+└─ CardHeader (px-6: 24px)
+    └─ Text → 실제 좌우 여백 = 24px
+```
+
+#### 3. 오버라이드 시 !important 사용
+shadcn/ui 기본 클래스를 오버라이드할 때는 `!` 접두사 필수
+
+```tsx
+<CardHeader className="!px-8">  // ✅ 확실한 오버라이드
+<CardHeader className="px-8">   // ❌ 적용 안 될 수 있음
+```
+
+---
+
+### shadcn/ui 기본 클래스 참조
+
+#### Card Component (`src/components/ui/card.tsx`)
+```typescript
+Card:
+- py-6              // 상하 24px
+- gap-6             // 자식 요소 간 24px
+- border            // 테두리 1px
+- rounded-xl        // 라운딩 12px
+- (좌우 패딩 없음)
+
+CardContent:
+- px-6              // 좌우 24px
+
+CardHeader:
+- px-6              // 좌우 24px
+- gap-2             // 제목-설명 간 8px
+
+CardTitle:
+- font-semibold
+- leading-none
+
+CardDescription:
+- text-sm
+- text-muted-foreground
+```
+
+---
+
+### 패딩 정책
+
+#### 이미지 + 텍스트 카드 (ScreenshotCard)
+```typescript
+// 이미지 영역: 좌우 패딩 제거 (카드 가장자리까지)
+<CardContent className="!px-0">
+
+// 텍스트 영역: 들여쓰기 효과
+<CardHeader className="!px-8">  // 32px (권장)
+```
+
+**결과**:
+- 이미지: 카드 너비 100% 활용
+- 텍스트: 좌우 32px 들여쓰기, 가독성 향상
+
+#### 일반적인 패딩 기준
+- **작은 카드**: 16px (px-4)
+- **중간 카드**: 24px (px-6) ← shadcn/ui 기본
+- **큰 카드**: 32px (px-8)
+- **여유로운 카드**: 40px (px-10)
+
+---
+
+### 디버깅 체크리스트
+
+#### UI 변경이 반영 안 될 때
+- [ ] 브라우저 강력 새로고침 (`Cmd + Shift + R`)
+- [ ] 개발 서버 에러 로그 확인 (`BashOutput` 도구)
+- [ ] 브라우저 개발자 도구에서 실제 적용된 CSS 확인
+- [ ] 부모 컴포넌트 기본 클래스 확인
+- [ ] 자식 컴포넌트 기본 클래스 확인
+- [ ] Tailwind 클래스 충돌 확인
+- [ ] `!important` 적용 여부 확인
+
+#### 패딩이 예상과 다를 때
+- [ ] 모든 레벨의 패딩 합계 계산
+- [ ] border, margin도 고려
+- [ ] 중첩된 컨테이너 확인 (div 안의 div)
+- [ ] 기본 클래스 오버라이드 확인
+
+---
+
 ## 1. Header Component
 
 ### 목적
@@ -63,6 +171,12 @@ interface HeaderProps {
 ```
 
 ### 구현 체크리스트
+
+**Phase 1: 준비**
+- [ ] shadcn/ui 컴포넌트 필요 여부 확인
+- [ ] 사용할 컴포넌트 기본 클래스 파악 (`cat src/components/ui/...`)
+
+**Phase 2: 구현**
 - [ ] `src/components/Header.tsx` 파일 생성
 - [ ] Image 컴포넌트로 `/logo.svg` 불러오기
 - [ ] `useState`로 스크롤 상태 관리
@@ -71,6 +185,13 @@ interface HeaderProps {
 - [ ] 반응형 스타일 적용 (모바일 중앙, 데스크톱 좌측)
 - [ ] sticky 또는 fixed 포지셔닝 적용
 - [ ] 애니메이션 transition 추가
+
+**Phase 3: 검증**
+- [ ] 브라우저에서 시각적 확인
+- [ ] 스크롤 동작 테스트
+- [ ] 반응형 테스트 (모바일, 태블릿, 데스크톱)
+- [ ] 개발자 도구로 실제 적용된 CSS 확인
+- [ ] 다크모드 테스트
 
 ---
 
@@ -122,6 +243,12 @@ interface FooterProps {
 ```
 
 ### 구현 체크리스트
+
+**Phase 1: 준비**
+- [ ] `src/config/links.ts` 데이터 준비 확인
+- [ ] shadcn/ui 컴포넌트 필요 여부 확인
+
+**Phase 2: 구현**
 - [ ] `src/components/Footer.tsx` 파일 생성
 - [ ] `src/config/links.ts` import
 - [ ] 저작권 텍스트 렌더링
@@ -130,6 +257,12 @@ interface FooterProps {
 - [ ] 링크에 `target="_blank"` 및 `rel="noopener noreferrer"` 추가
 - [ ] 반응형 레이아웃 적용 (모바일 세로, 데스크톱 가로)
 - [ ] 다크모드 스타일 추가
+
+**Phase 3: 검증**
+- [ ] 브라우저에서 시각적 확인
+- [ ] 모든 링크 클릭 테스트
+- [ ] 반응형 테스트 (모바일, 데스크톱)
+- [ ] 다크모드 테스트
 
 ---
 
@@ -179,14 +312,36 @@ interface ScreenshotCardProps {
 ```
 
 ### 구현 체크리스트
+
+**Phase 1: 준비 및 분석**
+- [ ] `src/components/ui/card.tsx` 소스 확인 (기본 클래스 파악)
+- [ ] Card 기본 클래스 확인: `py-6`, `gap-6`, `border`, `rounded-xl`
+- [ ] CardContent 기본 클래스 확인: `px-6`
+- [ ] CardHeader 기본 클래스 확인: `px-6`, `gap-2`
+- [ ] 패딩 중첩 계산: 어떤 영역에 어떤 패딩이 적용될지 사전 계획
+
+**Phase 2: 구현**
 - [ ] `src/components/ScreenshotCard.tsx` 파일 생성
 - [ ] Props 인터페이스 정의
-- [ ] shadcn/ui Card 컴포넌트 활용
+- [ ] shadcn/ui Card 컴포넌트 import
+- [ ] CardContent에 `!px-0` 적용 (이미지 영역 좌우 패딩 제거)
+- [ ] CardHeader에 `!px-8` 적용 (텍스트 32px 들여쓰기)
 - [ ] Next.js Image 컴포넌트로 이미지 최적화
+- [ ] `aspect-[9/16]` 비율 설정
 - [ ] 조건부 렌더링 (title, description)
 - [ ] `shadow-card` 커스텀 클래스 적용
-- [ ] 호버 효과 추가 (선택사항: scale, shadow 증가)
-- [ ] 다크모드 스타일 추가
+- [ ] 호버 효과 추가 (`hover:shadow-lg`)
+- [ ] `overflow-hidden` 적용
+
+**Phase 3: 검증**
+- [ ] 브라우저에서 시각적 확인
+- [ ] 이미지와 텍스트 좌우 정렬 확인 (같은 선상에서 시작)
+- [ ] 스크린샷 좌우 여백 확인 (카드 가장자리까지)
+- [ ] 텍스트 들여쓰기 확인 (32px)
+- [ ] 개발자 도구로 실제 패딩 값 확인
+- [ ] 다크모드 스타일 확인
+- [ ] 호버 효과 확인
+- [ ] 반응형 테스트
 
 ---
 
@@ -253,6 +408,13 @@ interface HeroSectionProps {
 ```
 
 ### 구현 체크리스트
+
+**Phase 1: 준비**
+- [ ] `src/components/ui/button.tsx` 기본 클래스 확인
+- [ ] `src/components/ui/dialog.tsx` 기본 클래스 확인
+- [ ] `src/config/links.ts` 데이터 준비 확인
+
+**Phase 2: 구현**
 - [ ] `src/app/_components/HeroSection.tsx` 파일 생성
 - [ ] `src/config/links.ts`에서 다운로드 링크 import
 - [ ] H1 제목 2줄 렌더링 (줄바꿈 고려)
@@ -261,10 +423,18 @@ interface HeroSectionProps {
 - [ ] App Store 버튼에 외부 링크 연결
 - [ ] Play Store 버튼에 Dialog 연결
 - [ ] Dialog 컴포넌트 구현 (안내 메시지)
-- [ ] Next.js Image로 히어로 이미지 추가
+- [ ] Next.js Image로 히어로 이미지 추가 (`priority` 속성)
 - [ ] 반응형 레이아웃 구현 (모바일 세로, 데스크톱 가로)
 - [ ] 버튼 아이콘 추가 (App Store, Play Store 아이콘)
 - [ ] 애니메이션 추가 (선택사항: fade-in, slide-up)
+
+**Phase 3: 검증**
+- [ ] 브라우저에서 시각적 확인
+- [ ] App Store 버튼 링크 동작 확인
+- [ ] Play Store 모달 열기/닫기 테스트
+- [ ] 반응형 레이아웃 테스트 (모바일, 태블릿, 데스크톱)
+- [ ] 히어로 이미지 로딩 확인
+- [ ] 다크모드 테스트
 
 ---
 
@@ -325,16 +495,33 @@ export const PREVIEW_FEATURES = [
 ```
 
 ### 구현 체크리스트
+
+**Phase 1: 준비**
+- [ ] `src/components/ui/carousel.tsx` 기본 클래스 및 옵션 확인
+- [ ] `src/config/features.ts` 데이터 준비
+- [ ] ScreenshotCard 컴포넌트 완성 확인
+
+**Phase 2: 구현**
 - [ ] `src/app/_components/PreviewSection.tsx` 파일 생성
-- [ ] `src/config/features.ts` 생성 및 데이터 정의
+- [ ] `src/config/features.ts` import
 - [ ] 섹션 제목 렌더링
-- [ ] 가로 스크롤 컨테이너 구현
-- [ ] CSS scroll-snap 적용 (`snap-x`, `snap-mandatory`)
+- [ ] shadcn/ui Carousel 컴포넌트 사용
+- [ ] Carousel 옵션 설정:
+  - [ ] `align: "start"` (좌측 정렬)
+  - [ ] `loop: false` (무한 루프 비활성화)
+  - [ ] `dragFree: true` (부드러운 드래그, 튕김 없음)
+  - [ ] `containScroll: "trimSnaps"` (마지막 스냅 최적화)
 - [ ] `PREVIEW_FEATURES` 배열 map으로 ScreenshotCard 렌더링
-- [ ] 각 카드에 `snap-center` 클래스 추가
-- [ ] 반응형: 모바일 1장, 데스크톱 3~4장 표시
-- [ ] 스크롤바 스타일링 (선택사항: 커스텀 스크롤바)
-- [ ] 스크롤 인디케이터 추가 (선택사항: dots)
+- [ ] CarouselItem에 `basis-auto` 적용
+- [ ] 각 카드 너비 320px 설정
+
+**Phase 3: 검증**
+- [ ] 브라우저에서 시각적 확인
+- [ ] 마우스 드래그 스크롤 테스트 (부드러운지, 튕기지 않는지)
+- [ ] 터치 스와이프 테스트 (모바일)
+- [ ] 좌측 정렬 확인 (snap-start)
+- [ ] 모든 스크린샷 렌더링 확인
+- [ ] 반응형 테스트
 
 ---
 
