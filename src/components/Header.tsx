@@ -26,8 +26,8 @@ export function Header() {
           <Image
             src="/logo.svg"
             alt="SimplTag"
-            width={98}
-            height={21}
+            width={137}
+            height={29}
             priority
           />
         </div>

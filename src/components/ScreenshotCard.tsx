@@ -10,7 +10,7 @@ interface ScreenshotCardProps {
 
 export function ScreenshotCard({ image, alt, title, description }: ScreenshotCardProps) {
   return (
-    <Card className="shadow-card overflow-hidden">
+    <Card className="shadow-none overflow-hidden border-0">
       <CardContent className="!px-0">
         <div className="relative w-full aspect-[9/16]">
           <Image
@@ -25,12 +25,12 @@ export function ScreenshotCard({ image, alt, title, description }: ScreenshotCar
       {(title || description) && (
         <CardHeader className="!px-8">
           {title && (
-            <CardTitle>
+            <CardTitle className="text-base font-semibold">
               {title}
             </CardTitle>
           )}
           {description && (
-            <CardDescription>
+            <CardDescription className="text-sm">
               {description}
             </CardDescription>
           )}
