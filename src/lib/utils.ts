@@ -1,2 +1,6 @@
-// Utility functions
-// Add helper functions like classnames, formatters, etc.
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}

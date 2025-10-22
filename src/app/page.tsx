@@ -1,103 +1,108 @@
-import Image from "next/image";
+import { ScreenshotCard } from "@/components/ScreenshotCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const screenshots = [
+    {
+      image: "/screenshots/chat-search.png",
+      alt: "SimplTag Chat 자연어 검색 화면",
+      title: "Chat 자연어 검색",
+      description: "자연어로 검색하면 AI가 관련 링크를 찾아줍니다."
+    },
+    {
+      image: "/screenshots/folder-page.png",
+      alt: "SimplTag 폴더 페이지",
+      title: "폴더 페이지",
+      description: "링크를 폴더별로 정리하고 관리할 수 있습니다."
+    },
+    {
+      image: "/screenshots/recent-page.png",
+      alt: "SimplTag Recent 페이지",
+      title: "Recent 페이지",
+      description: "최근에 저장한 링크들을 한눈에 확인할 수 있습니다."
+    },
+    {
+      image: "/screenshots/chat-search.png",
+      alt: "SimplTag Chat 자연어 검색 화면",
+      title: "스마트 검색",
+      description: "대화하듯이 검색하면 원하는 링크를 빠르게 찾을 수 있습니다."
+    },
+    {
+      image: "/screenshots/folder-page.png",
+      alt: "SimplTag 폴더 관리",
+      title: "체계적인 관리",
+      description: "폴더를 만들어 링크를 주제별로 분류하고 관리하세요."
+    },
+    {
+      image: "/screenshots/recent-page.png",
+      alt: "SimplTag 타임라인",
+      title: "타임라인 뷰",
+      description: "저장한 순서대로 정리된 링크들을 타임라인으로 확인하세요."
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-background">
+      <main className="max-w-7xl mx-auto px-4 py-16">
+        <div className="mb-12">
+          <h1 className="text-title-l font-bold mb-4">
+            ScreenshotCard 컴포넌트 데모
+          </h1>
+          <p className="text-body-m text-muted-foreground">
+            좌우로 드래그하여 스크린샷을 확인하세요
+          </p>
+        </div>
+
+        {/* 좌측 정렬 가로 스크롤 (Embla Carousel) - 부드러운 드래그 */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+            dragFree: true,
+            containScroll: "trimSnaps",
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-6">
+            {screenshots.map((screenshot, index) => (
+              <CarouselItem key={index} className="pl-6 basis-auto">
+                <div className="w-[320px]">
+                  <ScreenshotCard {...screenshot} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+
+        {/* 사용 안내 */}
+        <div className="mt-12 space-y-4">
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="text-title-s font-semibold mb-2">💡 사용 방법</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• 마우스로 드래그하거나 터치로 스와이프하여 스크롤</li>
+              <li>• 각 카드는 좌측에 스냅되어 정렬됩니다 (Embla Carousel)</li>
+              <li>• 부드러운 모멘텀 스크롤 지원</li>
+              <li>• 시스템 다크모드 설정을 변경하여 다크모드 확인 가능</li>
+            </ul>
+          </div>
+
+          <div className="p-4 bg-muted rounded-lg">
+            <h3 className="text-title-s font-semibold mb-2">📋 컴포넌트 정보</h3>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• 위치: <code className="bg-background px-1 rounded">src/components/ScreenshotCard.tsx</code></li>
+              <li>• shadcn/ui Carousel (Embla Carousel 기반)</li>
+              <li>• shadcn/ui Card 컴포넌트 활용</li>
+              <li>• Next.js Image로 이미지 최적화</li>
+              <li>• shadow-card 디자인 토큰 적용</li>
+              <li>• 9:16 비율 유지 (모바일 스크린샷)</li>
+            </ul>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
