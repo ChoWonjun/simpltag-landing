@@ -385,9 +385,14 @@
     height: auto;
     object-fit: contain;
   }
-  /* 강제 줄바꿈 모두 제거 — 자연 wrap */
-  .portfolio-root .hero h1 .hero-br {
+  /* 두 번째 강제 줄바꿈만 제거: "AI 서비스," 뒤 줄바꿈은 유지, 그 다음은 자연 wrap */
+  .portfolio-root .hero h1 .hero-br-2 {
     display: none;
+  }
+  /* 본문 단락의 text-wrap: pretty 가 모바일에서 우측 여백을 키우는 문제 → 자연 wrap */
+  .portfolio-root .about-block p,
+  .portfolio-root .entry-body p {
+    text-wrap: auto;
   }
   .portfolio-root .section {
     padding: 72px 0;
