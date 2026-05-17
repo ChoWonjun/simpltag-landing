@@ -345,8 +345,17 @@
   letter-spacing: 0.04em;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE — 모바일 단일 분기점 (≤820px: iPad 세로 포함) */
 @media (max-width: 820px) {
+  .portfolio-root {
+    font-size: 16px;
+  }
+  .portfolio-root .wrap {
+    padding: 0 22px;
+  }
+  .portfolio-root .topbar nav {
+    display: none;
+  }
   .portfolio-root .hero {
     padding: 0 0 56px;
   }
@@ -360,7 +369,7 @@
     max-width: none;
     width: auto;
     aspect-ratio: auto;
-    margin: 0 -32px;
+    margin: 0 -22px;
     padding: 40px 0;
     border-radius: 0;
     box-shadow: none;
@@ -376,8 +385,8 @@
     height: auto;
     object-fit: contain;
   }
-  /* 두 번째 강제 줄바꿈만 제거: "직접 만들어 보았습니다." 자연스럽게 */
-  .portfolio-root .hero h1 .hero-br-2 {
+  /* 강제 줄바꿈 모두 제거 — 자연 wrap */
+  .portfolio-root .hero h1 .hero-br {
     display: none;
   }
   .portfolio-root .section {
@@ -404,22 +413,5 @@
   }
   .portfolio-root .phone-frame {
     max-width: 280px;
-  }
-}
-@media (max-width: 560px) {
-  .portfolio-root .wrap {
-    padding: 0 22px;
-  }
-  .portfolio-root {
-    font-size: 16px;
-  }
-  .portfolio-root .topbar nav {
-    display: none;
-  }
-  .portfolio-root .hero h1 .hero-br {
-    display: none;
-  }
-  .portfolio-root .hero-img {
-    margin: 0 -22px;
   }
 }
