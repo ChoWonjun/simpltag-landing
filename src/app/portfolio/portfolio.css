@@ -159,7 +159,7 @@
 .portfolio-root .hero-img {
   position: relative;
   aspect-ratio: 1 / 1;
-  background: #F1EFE6;
+  background: #F7EFDC;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 0 var(--rule), 0 30px 60px -30px rgba(31, 42, 68, 0.18);
