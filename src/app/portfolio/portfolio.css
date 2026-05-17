@@ -348,15 +348,37 @@
 /* RESPONSIVE */
 @media (max-width: 820px) {
   .portfolio-root .hero {
-    padding: 56px 0;
+    padding: 0 0 56px;
   }
   .portfolio-root .hero .wrap {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  /* Hero 이미지: 양 옆 여백까지 채우는 풀블리드 밴드 + 가운데 정렬 */
   .portfolio-root .hero-img {
     order: -1;
+    max-width: none;
+    width: auto;
+    aspect-ratio: auto;
+    margin: 0 -32px;
+    padding: 40px 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolio-root .hero-img img {
+    display: block;
+    margin: 0 auto;
     max-width: 360px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  /* 두 번째 강제 줄바꿈만 제거: "직접 만들어 보았습니다." 자연스럽게 */
+  .portfolio-root .hero h1 .hero-br-2 {
+    display: none;
   }
   .portfolio-root .section {
     padding: 72px 0;
@@ -396,5 +418,8 @@
   }
   .portfolio-root .hero h1 .hero-br {
     display: none;
+  }
+  .portfolio-root .hero-img {
+    margin: 0 -22px;
   }
 }

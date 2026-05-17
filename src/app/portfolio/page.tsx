@@ -133,9 +133,9 @@ export default function PortfolioPage() {
             <div className="eyebrow">1인 프로덕트 출시기</div>
             <h1>
               <em>AI 서비스,</em>
-              <br className="hero-br" />
+              <br className="hero-br hero-br-1" />
               직접 만들어
-              <br className="hero-br" />
+              <br className="hero-br hero-br-2" />
               보았습니다.
             </h1>
             <p className="lede">7년차 카카오 인증 기획자의, 1인 프로덕트 출시기</p>
