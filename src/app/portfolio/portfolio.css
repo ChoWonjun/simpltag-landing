@@ -345,8 +345,8 @@
   letter-spacing: 0.04em;
 }
 
-/* RESPONSIVE — 모바일 단일 분기점 (≤820px: iPad 세로 포함) */
-@media (max-width: 820px) {
+/* RESPONSIVE — 모바일 단일 분기점 (≤768px: iPad 세로 포함) */
+@media (max-width: 768px) {
   .portfolio-root {
     font-size: 16px;
   }

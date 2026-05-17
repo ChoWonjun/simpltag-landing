@@ -238,7 +238,7 @@ export default function PortfolioPage() {
                       width={640}
                       height={1280}
                       loading="lazy"
-                      sizes="(max-width: 820px) 280px, 320px"
+                      sizes="(max-width: 768px) 280px, 320px"
                     />
                   </div>
                   <div className="caption">{entry.image.caption}</div>
