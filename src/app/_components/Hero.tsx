@@ -56,10 +56,10 @@ export function Hero() {
         <div className="animate-rise relative mx-auto w-full max-w-[340px] [animation-delay:360ms]">
           <div className="animate-float relative">
             <Image
-              src="/screenshots/preview3.png"
+              src="/screenshots/detail.png"
               alt="SimplTag가 콘텐츠 핵심만 30초 만에 보여주는 화면"
-              width={684}
-              height={1414}
+              width={647}
+              height={1355}
               priority
               className="h-auto w-full drop-shadow-[0_30px_60px_rgba(27,36,51,0.22)]"
             />
