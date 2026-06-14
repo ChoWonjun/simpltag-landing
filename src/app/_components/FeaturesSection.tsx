@@ -3,12 +3,13 @@ import { FEATURE_BLOCKS, SOURCE_KINDS } from "@/config/features";
 import { Reveal } from "./Reveal";
 
 /**
- * Features — save / search / chat, shown AFTER the wedge. Zigzag rows.
- * Closes with the "내 링크도 되나?" source-kind strip.
+ * Features — save / search / chat, shown AFTER the wedge. 3-column card grid
+ * mirroring the How-it-works layout for visual consistency. Closes with the
+ * "내 링크도 되나?" source-kind strip.
  */
 export function FeaturesSection() {
   return (
-    <section className="bg-brand-canvas px-5 py-16 md:py-24">
+    <section className="bg-brand-canvas px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow text-brand-ink-soft">검증이 끝이 아니에요</p>
@@ -18,57 +19,42 @@ export function FeaturesSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 flex flex-col gap-14 md:gap-20">
+        <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
           {FEATURE_BLOCKS.map((f, i) => {
-            const reversed = i % 2 === 1;
             const accent =
               f.accent === "coral" ? "text-brand-coral" : "text-brand-blue";
-            const halo =
-              f.accent === "coral" ? "bg-brand-coral/10" : "bg-brand-blue/10";
             return (
-              <div
-                key={f.id}
-                className="grid items-center gap-10 md:grid-cols-2 md:gap-14"
-              >
-                {/* Text */}
-                <Reveal
-                  className={reversed ? "md:order-2 md:pl-6" : "md:pr-6"}
-                >
+              <Reveal key={f.id} delay={i * 100} className="flex flex-col gap-7">
+                <div className="relative mx-auto w-full max-w-[260px] order-2 md:order-1">
+                  <div
+                    aria-hidden
+                    className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-brand-cream-soft"
+                  />
+                  <Image
+                    src={f.image}
+                    alt={f.alt}
+                    width={548}
+                    height={1148}
+                    className="relative h-auto w-full drop-shadow-[0_18px_40px_rgba(27,36,51,0.16)]"
+                  />
+                </div>
+
+                <div className="order-1 text-center md:order-2">
                   <p className={`eyebrow ${accent}`}>{f.eyebrow}</p>
-                  <h3 className="mt-3 text-2xl font-extrabold leading-snug tracking-[-0.01em] text-brand-ink md:text-[1.9rem]">
+                  <h3 className="mt-3 text-xl font-bold leading-snug text-brand-ink">
                     {f.title}
                   </h3>
-                  <p className="mt-4 max-w-md text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
+                  <p className="mx-auto mt-2.5 max-w-xs text-[15px] leading-relaxed text-brand-ink-soft">
                     {f.body}
                   </p>
-                </Reveal>
-
-                {/* Phone */}
-                <Reveal
-                  delay={80}
-                  className={reversed ? "md:order-1" : ""}
-                >
-                  <div className="relative mx-auto w-full max-w-[260px]">
-                    <div
-                      aria-hidden
-                      className={`absolute inset-x-2 bottom-8 top-12 rounded-[2.5rem] ${halo} blur-md`}
-                    />
-                    <Image
-                      src={f.image}
-                      alt={f.alt}
-                      width={616}
-                      height={1272}
-                      className="relative h-auto w-full drop-shadow-[0_22px_50px_rgba(27,36,51,0.18)]"
-                    />
-                  </div>
-                </Reveal>
-              </div>
+                </div>
+              </Reveal>
             );
           })}
         </div>
 
         {/* Source kinds reassurance */}
-        <Reveal className="mt-20 text-center">
+        <Reveal className="mt-16 text-center">
           <p className="text-[15px] font-medium text-brand-ink-soft">
             이런 링크, 전부 됩니다
           </p>
