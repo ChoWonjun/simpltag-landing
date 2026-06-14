@@ -4,7 +4,6 @@ import { Hero } from "@/app/_components/Hero";
 import { ProblemSection } from "@/app/_components/ProblemSection";
 import { HowItWorks } from "@/app/_components/HowItWorks";
 import { FeaturesSection } from "@/app/_components/FeaturesSection";
-import { FaqSection } from "@/app/_components/FaqSection";
 import { FinalCta } from "@/app/_components/FinalCta";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
         <ProblemSection />
         <HowItWorks />
         <FeaturesSection />
-        <FaqSection />
         <FinalCta />
       </main>
       <Footer />

@@ -56,12 +56,6 @@ export interface FeatureBlock {
   accent?: "blue" | "coral";
 }
 
-export interface FaqItem {
-  id: string;
-  q: string;
-  a: string;
-}
-
 export interface SourceKind {
   id: string;
   label: string;

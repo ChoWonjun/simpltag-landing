@@ -12,8 +12,6 @@ import {
 import { DOWNLOAD_LINKS } from "@/config/links";
 
 interface AppStoreCtaProps {
-  /** show the "카드 등록 없이 무료" microcopy under the badges */
-  microcopy?: boolean;
   /** alignment of the group */
   align?: "center" | "start";
   className?: string;
@@ -25,7 +23,6 @@ interface AppStoreCtaProps {
  * badge opens an "준비 중" dialog (Android not shipped).
  */
 export function AppStoreCta({
-  microcopy = true,
   align = "center",
   className = "",
 }: AppStoreCtaProps) {
@@ -67,16 +64,6 @@ export function AppStoreCta({
           />
         </button>
       </div>
-
-      {microcopy && (
-        <p
-          className={`text-[13px] text-brand-ink-soft ${
-            align === "center" ? "text-center" : "text-left"
-          }`}
-        >
-          카드 등록 없이 무료로 시작 · 언제든 해지
-        </p>
-      )}
 
       <Dialog open={androidOpen} onOpenChange={setAndroidOpen}>
         <DialogContent>
