@@ -8,17 +8,17 @@ import { Reveal } from "./Reveal";
  */
 export function FeaturesSection() {
   return (
-    <section className="bg-brand-canvas px-5 py-20 md:py-28">
+    <section className="bg-brand-canvas px-5 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow text-brand-ink-soft">검증하고 끝이 아니에요</p>
+          <p className="eyebrow text-brand-ink-soft">검증이 끝이 아니에요</p>
           <h2 className="mt-4 text-[1.8rem] font-extrabold leading-[1.3] tracking-[-0.01em] text-brand-ink md:text-[2.4rem]">
-            한 번 본 콘텐츠가,
-            <br className="sm:hidden" /> 검색되는 나만의 아카이브로
+            한 번 저장하면
+            <br className="sm:hidden" /> 검색 가능한 아카이브가 돼요
           </h2>
         </Reveal>
 
-        <div className="mt-16 flex flex-col gap-20 md:gap-28">
+        <div className="mt-14 flex flex-col gap-14 md:gap-20">
           {FEATURE_BLOCKS.map((f, i) => {
             const reversed = i % 2 === 1;
             const accent =
@@ -48,7 +48,7 @@ export function FeaturesSection() {
                   delay={80}
                   className={reversed ? "md:order-1" : ""}
                 >
-                  <div className="relative mx-auto w-full max-w-[300px]">
+                  <div className="relative mx-auto w-full max-w-[260px]">
                     <div
                       aria-hidden
                       className={`absolute inset-x-2 bottom-8 top-12 rounded-[2.5rem] ${halo} blur-md`}

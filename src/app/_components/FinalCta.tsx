@@ -18,13 +18,12 @@ export function FinalCta() {
       />
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <h2 className="text-[2rem] font-extrabold leading-[1.25] tracking-[-0.02em] text-brand-ink md:text-[2.75rem]">
-          다음 영상부터는,
+          다음 영상부터는
           <br />
-          보기 전에 아세요.
+          보기 전에 결정하세요.
         </h2>
-        <p className="mx-auto mt-5 max-w-md text-[1.0625rem] leading-[1.65] text-brand-ink-soft">
-          링크 하나만 공유하면 돼요. 후회하는 시간 대신, 핵심만 남는 아카이브를
-          지금 시작해보세요.
+        <p className="mx-auto mt-5 max-w-md text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
+          링크 하나만 공유하면 돼요. 후회하는 시간 대신 핵심만 쌓아보세요.
         </p>
         <div className="mt-9 flex justify-center">
           <AppStoreCta align="center" />

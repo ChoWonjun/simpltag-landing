@@ -9,7 +9,7 @@ export function ProblemSection() {
     <section className="bg-brand-canvas px-5 py-20 md:py-28">
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
-          <p className="eyebrow text-brand-ink-soft">그거, 다들 겪어요</p>
+          <p className="eyebrow text-brand-ink-soft">누구나 겪는 일이에요</p>
           <h2 className="mx-auto mt-4 max-w-2xl text-[1.7rem] font-extrabold leading-[1.32] tracking-[-0.01em] text-brand-ink md:text-[2.25rem]">
             썸네일은 충격적인데,
             <br />
@@ -25,7 +25,7 @@ export function ProblemSection() {
           <Reveal delay={60}>
             <div className="h-full rounded-2xl border border-brand-line bg-white p-6 md:p-7">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-coral/10 px-3 py-1 text-[13px] font-semibold text-brand-coral">
-                지금까지
+                지금까지는
               </span>
               <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-brand-ink-soft">
                 <li>· 끝까지 보고 나서야 “이걸 왜 봤지” 싶고</li>
@@ -38,10 +38,10 @@ export function ProblemSection() {
           <Reveal delay={140}>
             <div className="h-full rounded-2xl border border-brand-blue/25 bg-brand-blue/[0.04] p-6 md:p-7">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1 text-[13px] font-semibold text-brand-blue">
-                심플태그와는
+                심플태그를 쓰면
               </span>
               <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-brand-ink">
-                <li>· 보기 전에 핵심부터 30초로 먼저 확인하고</li>
+                <li>· 보기 전에 30초 만에 핵심부터 확인하고</li>
                 <li>· 저장한 콘텐츠는 알아서 태그·폴더로 정리되고</li>
                 <li>· 한글로 떠오르는 대로 물어도 바로 찾고</li>
               </ul>

@@ -25,7 +25,7 @@ export const HOW_STEPS: HowStep[] = [
     id: "decide",
     step: "03",
     label: "안 봐도 핵심은 알아요",
-    body: "30초면 결론을 먼저 확인. 볼 가치가 있으면 그때 원본으로 가면 돼요.",
+    body: "30초면 결론부터 확인할 수 있어요. 볼 만하면 그때 원본을 보면 되고요.",
     image: "/screenshots/detail.png",
     alt: "콘텐츠 핵심 요약을 보여주는 상세 화면",
   },
@@ -39,7 +39,7 @@ export const FEATURE_BLOCKS: FeatureBlock[] = [
   {
     id: "organize",
     eyebrow: "자동 정리",
-    title: "저장만 하면, 알아서 정리돼요",
+    title: "저장만 하면 알아서 정리돼요",
     body: "태그도 폴더도 직접 만들 필요 없어요. 심플태그가 콘텐츠를 읽고 어울리는 태그를 자동으로 붙여 분류해 둡니다.",
     image: "/screenshots/tag.png",
     alt: "자동으로 분류된 태그 목록 화면",
@@ -48,7 +48,7 @@ export const FEATURE_BLOCKS: FeatureBlock[] = [
   {
     id: "search",
     eyebrow: "의미 검색",
-    title: "한글로 물어도, 영문 콘텐츠까지 찾아드려요",
+    title: "한글로 물어도 영문 콘텐츠까지 찾아요",
     body: "제목·요약·태그·메모를 모두 이해하는 의미 기반 검색이에요. 정확한 단어가 기억나지 않아도 떠오르는 대로 찾으세요.",
     image: "/screenshots/list.png",
     alt: "저장한 콘텐츠가 쌓인 아카이브 목록 화면",
@@ -57,8 +57,8 @@ export const FEATURE_BLOCKS: FeatureBlock[] = [
   {
     id: "chat",
     eyebrow: "출처 기반 대화",
-    title: "저장한 콘텐츠에게, 직접 물어보세요",
-    body: "AI가 당신이 저장한 콘텐츠에 근거해 답해요. 지어내지 않고, 어떤 콘텐츠에서 나온 답인지 출처까지 보여드립니다.",
+    title: "저장한 콘텐츠에게 직접 물어보세요",
+    body: "AI가 내가 저장한 콘텐츠를 근거로 답해요. 지어내지 않고, 어떤 콘텐츠에서 나온 답인지 출처까지 보여드려요.",
     image: "/screenshots/chat.png",
     alt: "저장한 콘텐츠를 바탕으로 답하는 AI 대화 화면",
     accent: "blue",
@@ -88,7 +88,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: "privacy",
     q: "제가 저장한 내용은 안전한가요?",
-    a: "저장한 콘텐츠는 본인 계정에만 연결되고, 다른 사용자에게 노출되지 않아요. AI 답변도 당신이 저장한 콘텐츠 안에서만 만들어집니다.",
+    a: "저장한 콘텐츠는 본인 계정에만 연결되고, 다른 사용자에게 노출되지 않아요. AI 답변도 본인이 저장한 콘텐츠 안에서만 만들어집니다.",
   },
   {
     id: "platform",
