@@ -28,14 +28,15 @@ export function Hero() {
 
           <h1 className="animate-rise mt-5 text-[2rem] font-extrabold leading-[1.18] tracking-[-0.02em] text-brand-ink [animation-delay:120ms] sm:text-[2.6rem] md:text-[3.25rem]">
             끝까지 보고
-            <br className="hidden sm:block" /> 후회한 적,{" "}
+            <br className="hidden sm:block" />{" "}
             <span className="relative whitespace-nowrap">
-              <span className="relative z-10">있으시죠?</span>
+              <span className="relative z-10">후회한 적</span>
               <span
                 aria-hidden
                 className="absolute inset-x-0 bottom-1 z-0 h-3 -rotate-1 rounded-sm bg-brand-coral/30 md:bottom-2 md:h-4"
               />
             </span>
+            , 있으시죠?
           </h1>
 
           <p className="animate-rise mx-auto mt-6 max-w-xl text-[1.0625rem] leading-[1.7] text-brand-ink-soft [animation-delay:200ms] md:mx-0 md:text-[1.1875rem]">
