@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { HOW_STEPS } from "@/config/features";
 import { Reveal } from "./Reveal";
-import { AppStoreCta } from "./AppStoreCta";
 
 /**
  * How it works — 3 steps. Proves "쉽다". Result-verb headers, phone shots.
@@ -54,10 +53,6 @@ export function HowItWorks() {
             </Reveal>
           ))}
         </ol>
-
-        <Reveal className="mt-16 flex justify-center">
-          <AppStoreCta align="center" />
-        </Reveal>
       </div>
     </section>
   );
