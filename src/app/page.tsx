@@ -1,15 +1,25 @@
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { HeroSection } from "@/app/_components/HeroSection";
-import { PreviewSection } from "@/app/_components/PreviewSection";
+import { LandingHeader } from "@/app/_components/LandingHeader";
+import { Hero } from "@/app/_components/Hero";
+import { ProblemSection } from "@/app/_components/ProblemSection";
+import { HowItWorks } from "@/app/_components/HowItWorks";
+import { FeaturesSection } from "@/app/_components/FeaturesSection";
+import { TrustSection } from "@/app/_components/TrustSection";
+import { FaqSection } from "@/app/_components/FaqSection";
+import { FinalCta } from "@/app/_components/FinalCta";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="min-h-screen bg-brand-canvas">
+      <LandingHeader />
       <main>
-        <HeroSection />
-        <PreviewSection />
+        <Hero />
+        <ProblemSection />
+        <HowItWorks />
+        <FeaturesSection />
+        <TrustSection />
+        <FaqSection />
+        <FinalCta />
       </main>
       <Footer />
     </div>
