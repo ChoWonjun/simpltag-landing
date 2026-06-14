@@ -20,8 +20,13 @@ export function HowItWorks() {
 
         <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
           {HOW_STEPS.map((s, i) => (
-            <Reveal as="li" key={s.id} delay={i * 100} className="flex flex-col">
-              <div className="relative mx-auto w-full max-w-[260px]">
+            <Reveal
+              as="li"
+              key={s.id}
+              delay={i * 100}
+              className="flex flex-col gap-7"
+            >
+              <div className="relative mx-auto w-full max-w-[260px] order-2 md:order-1">
                 <div
                   aria-hidden
                   className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-brand-cream-soft"
@@ -35,7 +40,7 @@ export function HowItWorks() {
                 />
               </div>
 
-              <div className="mt-7 text-center">
+              <div className="order-1 text-center md:order-2">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-ink text-sm font-bold text-white">
                   {s.step}
                 </span>
