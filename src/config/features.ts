@@ -9,7 +9,7 @@ export const HOW_STEPS: HowStep[] = [
     id: "share",
     step: "01",
     label: "공유하기",
-    body: "유튜브·블로그·뉴스, 어떤 링크든 공유 버튼을 누르고 SimplTag만 고르면 끝. 앱을 따로 열 필요도 없어요.",
+    body: "유튜브·블로그·뉴스, 어떤 링크든 공유 버튼 누르고 SimplTag만 고르면 끝. 앱을 따로 열 필요 없어요.",
     image: "/screenshots/share.png",
     alt: "iOS 공유 시트에서 SimplTag를 선택하는 화면",
   },
