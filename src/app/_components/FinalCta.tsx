@@ -18,9 +18,9 @@ export function FinalCta() {
       />
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <h2 className="text-[2rem] font-extrabold leading-[1.25] tracking-[-0.02em] text-brand-ink md:text-[2.75rem]">
-          다음 영상부터는
+          보기 전에 SimplTag로,
           <br />
-          보기 전에 결정하세요.
+          핵심만 간단하게 확인해 보세요.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
           링크 하나만 공유하면 돼요. 후회하는 시간 대신 핵심만 쌓아보세요.
