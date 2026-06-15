@@ -65,6 +65,14 @@ export function AppStoreCta({
         </button>
       </div>
 
+      <p
+        className={`text-[13px] text-brand-ink-soft ${
+          align === "center" ? "text-center" : "text-left"
+        }`}
+      >
+        무료로 시작
+      </p>
+
       <Dialog open={androidOpen} onOpenChange={setAndroidOpen}>
         <DialogContent>
           <DialogHeader>

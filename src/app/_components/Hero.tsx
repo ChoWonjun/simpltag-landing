@@ -42,8 +42,8 @@ export function Hero() {
           </h1>
 
           <p className="animate-rise mx-auto mt-6 max-w-xl text-[1.0625rem] leading-[1.7] text-brand-ink-soft [animation-delay:200ms] md:mx-0 md:text-[1.1875rem]">
-            링크만 공유하면 SimplTag가 먼저 읽고 핵심만 추려드려요. 끝까지 안
-            봐도 30초면 볼지 말지 결정할 수 있어요.
+            링크만 공유하면 SimplTag가 핵심만 추려드려요. 끝까지 안 봐도 30초면
+            시간 들여 볼 만한 콘텐츠인지 알 수 있어요.
           </p>
 
           <div className="animate-rise mt-9 [animation-delay:280ms]">

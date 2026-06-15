@@ -11,7 +11,7 @@ export function FeaturesSection() {
     <section className="bg-brand-canvas px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow text-brand-ink-soft">검증이 끝이 아니에요</p>
+          <p className="eyebrow text-brand-ink-soft">확인하고 끝이 아니에요</p>
           <h2 className="mt-4 text-[1.8rem] font-extrabold leading-[1.3] tracking-[-0.01em] text-brand-ink md:text-[2.4rem]">
             한 번 저장하면
             <br className="sm:hidden" /> 검색 가능한 아카이브가 돼요
