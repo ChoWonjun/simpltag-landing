@@ -17,8 +17,8 @@ export function ProblemSection() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
             낚시 영상에 속아 시간만 날리거나, ‘나중에 봐야지’ 저장해둔 아티클은
-            어디다 뒀는지 기억도 안 나요. 누가 대신 보고 중요한 내용만
-            알려줬으면 했던 적 있으신가요?
+            결국 다시 안 열게 되죠. 누가 대신 보고 중요한 내용만 알려줬으면 했던
+            적 있으신가요?
           </p>
         </Reveal>
 
