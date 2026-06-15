@@ -38,7 +38,7 @@ export const HOW_STEPS: HowStep[] = [
 export const FEATURE_BLOCKS: FeatureBlock[] = [
   {
     id: "variety",
-    eyebrow: "유튜브만이 아니에요",
+    eyebrow: "콘텐츠 요약",
     title: "영상도 기사도, 다 요약돼요",
     body: "유튜브 영상이든 뉴스 기사든, 링크만 저장하면 심플태그가 핵심만 추려 한곳에 모아둡니다.",
     image: "/screenshots/home.png",
