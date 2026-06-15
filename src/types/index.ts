@@ -35,3 +35,24 @@ export interface Feature {
   alt: string;
   description?: string;
 }
+
+// Landing redesign content models
+export interface HowStep {
+  id: string;
+  step: string; // "01"
+  label: string; // result-verb header e.g. "안 봐도 알아요"
+  body: string;
+  image: string;
+  alt: string;
+}
+
+export interface FeatureBlock {
+  id: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+  image: string;
+  alt: string;
+  accent?: "blue" | "coral";
+}
+
