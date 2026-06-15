@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { FEATURE_BLOCKS, SOURCE_KINDS } from "@/config/features";
+import { FEATURE_BLOCKS } from "@/config/features";
 import { Reveal } from "./Reveal";
 
 /**
  * Features — save / search / chat, shown AFTER the wedge. 3-column card grid
- * mirroring the How-it-works layout for visual consistency. Closes with the
- * "내 링크도 되나?" source-kind strip.
+ * mirroring the How-it-works layout for visual consistency.
  */
 export function FeaturesSection() {
   return (
@@ -52,23 +51,6 @@ export function FeaturesSection() {
             );
           })}
         </div>
-
-        {/* Source kinds reassurance */}
-        <Reveal className="mt-16 text-center">
-          <p className="text-[15px] font-medium text-brand-ink-soft">
-            이런 링크, 전부 됩니다
-          </p>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
-            {SOURCE_KINDS.map((k) => (
-              <li
-                key={k.id}
-                className="rounded-full border border-brand-line bg-white px-4 py-2 text-sm font-semibold text-brand-ink"
-              >
-                {k.label}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </div>
     </section>
   );

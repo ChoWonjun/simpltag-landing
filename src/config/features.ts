@@ -1,4 +1,4 @@
-import { HowStep, FeatureBlock, SourceKind } from "@/types";
+import { HowStep, FeatureBlock } from "@/types";
 
 /**
  * How it works — 3 steps. Headers are result-verbs (not feature names),
@@ -9,7 +9,7 @@ export const HOW_STEPS: HowStep[] = [
     id: "share",
     step: "01",
     label: "공유하기",
-    body: "유튜브·아티클에서 공유 버튼을 누르고 SimplTag를 고르면 끝. 앱을 따로 열 필요도 없어요.",
+    body: "유튜브·블로그·뉴스, 어떤 링크든 공유 버튼을 누르고 SimplTag만 고르면 끝. 앱을 따로 열 필요도 없어요.",
     image: "/screenshots/share.png",
     alt: "iOS 공유 시트에서 SimplTag를 선택하는 화면",
   },
@@ -63,12 +63,4 @@ export const FEATURE_BLOCKS: FeatureBlock[] = [
     alt: "저장한 콘텐츠를 바탕으로 답하는 AI 대화 화면",
     accent: "blue",
   },
-];
-
-/** "내 링크도 되나?" — input source reassurance strip. */
-export const SOURCE_KINDS: SourceKind[] = [
-  { id: "youtube", label: "유튜브" },
-  { id: "article", label: "블로그·아티클" },
-  { id: "news", label: "뉴스" },
-  { id: "web", label: "웹페이지·PDF" },
 ];
