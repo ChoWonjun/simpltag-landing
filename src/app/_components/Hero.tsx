@@ -55,7 +55,7 @@ export function Hero() {
         <div className="animate-rise relative mx-auto w-full max-w-[340px] [animation-delay:360ms]">
           <div className="animate-float relative">
             <Image
-              src="/screenshots/detail.png"
+              src="/screenshots/welcome.png"
               alt="SimplTag가 콘텐츠 핵심만 30초 만에 보여주는 화면"
               width={647}
               height={1355}
@@ -72,7 +72,7 @@ export function Hero() {
           {/* "원본 28:14 → 안 봐도 OK" chip */}
           <div className="absolute -right-1 bottom-24 rotate-[4deg] rounded-2xl bg-white px-4 py-3 shadow-lg md:-right-6">
             <p className="text-[11px] font-medium text-brand-ink-soft line-through">
-              원본 영상 28:14
+              원문 끝까지
             </p>
             <p className="text-sm font-bold text-brand-blue">안 봐도 OK 👍</p>
           </div>
