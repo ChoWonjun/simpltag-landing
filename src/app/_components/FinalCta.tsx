@@ -18,7 +18,7 @@ export function FinalCta() {
       />
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <h2 className="text-[2rem] font-extrabold leading-[1.25] tracking-[-0.02em] text-brand-ink md:text-[2.75rem]">
-          보기 전에 SimplTag로,
+          보기 전에 심플태그로,
           <br />
           핵심만 간단하게 확인해 보세요.
         </h2>
