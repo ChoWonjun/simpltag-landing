@@ -23,7 +23,8 @@ export function FinalCta() {
           핵심만 간단하게 확인해 보세요.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
-          링크 하나만 공유하면 돼요. 후회하는 시간 대신 핵심만 쌓아보세요.
+          링크 하나만 공유하세요. ‘나중에 봐야지’ 미루지 말고, 또 보고 싶은
+          콘텐츠만 쌓아보세요.
         </p>
         <div className="mt-9 flex justify-center">
           <AppStoreCta align="center" />

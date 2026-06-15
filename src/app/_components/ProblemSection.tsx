@@ -9,15 +9,16 @@ export function ProblemSection() {
     <section className="bg-brand-canvas px-5 py-20 md:py-28">
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
-          <p className="eyebrow text-brand-ink-soft">누구나 겪는 일이에요</p>
+          <p className="eyebrow text-brand-ink-soft">누구나 이런 경험 있잖아요</p>
           <h2 className="mx-auto mt-4 max-w-2xl text-[1.7rem] font-extrabold leading-[1.32] tracking-[-0.01em] text-brand-ink md:text-[2.25rem]">
             썸네일은 충격적인데,
             <br />
-            정작 결론은 마지막 30초에 있죠.
+            정작 기대했던 내용은 마지막에 아주 잠깐.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.7] text-brand-ink-soft">
-            낚시 영상에 속아 20분을 날리고, 저장만 해둔 아티클은 다시 안 열어요.
-            쌓이는 건 콘텐츠가 아니라 ‘나중에 볼게’라는 후회뿐.
+            낚시 영상에 속아 시간만 날리거나, ‘나중에 봐야지’ 저장해둔 아티클은
+            어디다 뒀는지 기억도 안 나요. 누가 대신 보고 중요한 내용만
+            알려줬으면 했던 적 있으신가요?
           </p>
         </Reveal>
 
@@ -41,7 +42,7 @@ export function ProblemSection() {
                 심플태그를 쓰면
               </span>
               <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-brand-ink">
-                <li>· 보기 전에 30초 만에 핵심부터 확인하고</li>
+                <li>· 보기 전에 핵심부터 먼저 확인하고</li>
                 <li>· 저장한 콘텐츠는 알아서 태그·폴더로 정리되고</li>
                 <li>· 한글로 떠오르는 대로 물어도 바로 찾고</li>
               </ul>
