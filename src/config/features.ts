@@ -58,7 +58,7 @@ export const FEATURE_BLOCKS: FeatureBlock[] = [
     id: "search",
     eyebrow: "자연어 검색",
     title: "기억나는 대로 물어보세요",
-    body: "제목·요약·태그 기억하지 않아도 돼요. 정확한 단어가 아니어도 떠오르는 대로 물으면 의미 기반으로 찾아드려요.",
+    body: "제목·요약·태그 기억하지 않아도 돼요. 떠오르는 대로 물으면 의미 기반으로 찾아드려요.",
     image: "/screenshots/search.png",
     alt: "자연어로 질문해 관련 콘텐츠를 찾아주는 검색 결과 화면",
     accent: "blue",
