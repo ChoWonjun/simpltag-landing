@@ -93,7 +93,7 @@ SimplTag의 주요 기능과 앱 인터페이스를 시각적으로 전달한다
 ### 4.4 푸터
 **구성 요소**
 - `© 2025 SimplTag`
-- 문의하기: `mailto:support@simpltag.com`
+- 문의하기: `mailto:simpltag.help@gmail.com`
 - 이용약관 링크: 외부 URL
 - 개인정보처리방침 링크: 외부 URL
 
@@ -137,7 +137,7 @@ SimplTag의 주요 기능과 앱 인터페이스를 시각적으로 전달한다
 - App Store 및 Play Store 버튼 정상 동작
 - 미리보기 섹션 좌우 스크롤 기능 구현
 - meta / OG 태그 반영 완료
-- `mailto:support@simpltag.com` 정상 동작
+- `mailto:simpltag.help@gmail.com` 정상 동작
 - 외부 약관/개인정보처리방침 링크 정상 동작
 - 서버리스, API, 폼 기능 없음
 - `npm run build && npm start` 시 오류 없이 빌드 가능

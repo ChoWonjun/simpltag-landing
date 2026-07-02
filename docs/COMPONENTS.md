@@ -205,7 +205,7 @@ interface HeaderProps {
 
 ### 구성 요소
 - 저작권 표시: `© 2025 SimplTag`
-- 문의하기 링크: `mailto:support@simpltag.com`
+- 문의하기 링크: `mailto:simpltag.help@gmail.com`
 - 이용약관 링크 (외부 URL)
 - 개인정보처리방침 링크 (외부 URL)
 
@@ -570,7 +570,7 @@ export const LEGAL_LINKS = {
 }
 
 export const CONTACT = {
-  email: 'support@simpltag.com',
+  email: 'simpltag.help@gmail.com',
 }
 ```
 

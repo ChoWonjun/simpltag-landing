@@ -11,5 +11,5 @@ export const LEGAL_LINKS: LegalLinks = {
 };
 
 export const CONTACT: Contact = {
-  email: 'support@simpltag.com',
+  email: 'simpltag.help@gmail.com',
 };
